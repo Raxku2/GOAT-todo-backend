@@ -4,9 +4,10 @@ from app.auth.auth import router as AuthRouter
 from app.account.user import router as AccountRouter
 from app.todos.todo import router as TodoRouter
 from app.database.services import is_db_a_connected
+from app.middlewares.cors import cors_middleware
 
 app = FastAPI(title="GOAT ToDo API", version="0.0.1")
-
+cors_middleware(app)
 app.include_router(AuthRouter)
 app.include_router(AccountRouter)
 app.include_router(TodoRouter)

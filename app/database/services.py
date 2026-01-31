@@ -70,7 +70,7 @@ def update_user(data: update_user_schema):
     """update user data in app"""
     status = user_coll.update_one(
         {"_id": ObjectId(data.user_id)},
-        ({"$set": {"name": data.name, "email": data.email, "catagory": data.catagory}}),
+        ({"$set": {"name": data.name, "email": data.email}}),
     ).upserted_id
 
     if status:

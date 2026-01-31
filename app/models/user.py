@@ -8,7 +8,6 @@ class delete_user_schema(BaseModel):
 
 class update_user_schema(delete_user_schema):
     name: str
-    catagory: list[dict]
 
 
 class catagory_schema(BaseModel):

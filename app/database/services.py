@@ -242,5 +242,5 @@ def mark_all_done(user_id: str):
 
 
 def delete_done_todo(user_id: str):
-    status = todo_coll.delete_many({"user_id": user_id, "status": 2}).deleted_count
+    status = todo_coll.delete_many({"user_id": user_id, "status": 0}).deleted_count
     return status
